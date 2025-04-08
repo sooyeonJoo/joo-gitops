@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: issue-service
-          image: harbor.oke.com:30217/joo-test/joo-service:latest
+          image: harbor.oke.com:30217/joo-test/joo-service:v14
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
