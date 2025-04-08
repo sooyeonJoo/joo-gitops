@@ -1,1 +1,23 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: issue-service
+  namespace: eris-be
+  labels:
+    app: issue-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: issue-service
+  template:
+    metadata:
+      labels:
+        app: issue-service
+    spec:
+      containers:
+        - name: issue-service
+          image: harbor.oke.com:30217/joo-test/joo-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
