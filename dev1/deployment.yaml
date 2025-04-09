@@ -15,9 +15,11 @@ spec:
       labels:
         app: joo-service
     spec:
+      imagePullSecrets:
+        - name: harbor-secret
       containers:
         - name: joo-service
           image: harbor.oke.com:30217/joo-test/joo-service:latest
-          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
+
